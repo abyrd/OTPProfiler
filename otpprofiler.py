@@ -9,8 +9,9 @@ import json
 
 db = sqlite3.connect("profile_results.sqlite")
 
-times = ["%02d:%02d" % (h, m) for h in range(24) for m in range(0, 60, 30)]
+times = ["%02d:%02d" % (h, m) for h in range(5, 24, 2) for m in range(0, 60, 30)]
 modes = ["WALK", "BICYCLE", "WALK,TRANSIT", "BICYCLE,TRANSIT"]
+modes = ["WALK,TRANSIT", "BICYCLE,TRANSIT"]
 walks = [500, 1000, 2000, 3000, 5000, 10000, 20000]
 
 #runid = time;
@@ -36,13 +37,12 @@ x = list(itertools.product(modes, times, walks, ('Depart','Arrive'), endpoints.i
 random.shuffle(x)
 for r in x :
 #for r in itertools.product(modes, times, walks, ('Depart','Arrive'), endpoints.items(), endpoints.items()) :
-    print r
     (mode, t, walk, arrive_by, orig, dest) = r
     o_name, o_coord = orig
     d_name, d_coord = dest
     if o_name == d_name :
         continue
-    print '%s to %s' % (o_name, d_name)
+    print '%s to %s / %s %s via %s / max walk %s' % (o_name, d_name, arrive_by, t, mode, walk)
     url = URL % (o_coord[0],o_coord[1],d_coord[0],d_coord[1],"QUICK",walk,mode,t,arrive_by)
     req = urllib2.Request(url)
     req.add_header('Accept', 'APPLICATION/XML')
@@ -62,11 +62,10 @@ for r in x :
         print 'error'
         continue
     nItin = len(soup.response.plan.itineraries)
-    print nItin, 'itineraries'
     duration = end - start
     total += duration
-    print duration, 'sec'
-    print url
+    print '%f = %f sec / %d itineraries' % (duration/nItin, duration, nItin)
+    #print url
     durations.append(duration)
     if duration > worst:
         worst = duration
