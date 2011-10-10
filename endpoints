@@ -1,18 +1,21 @@
->center
-Pioneer Square, X, Y
-NW 23rd, X, Y
-PSU Library, X, Y
-Old Town, X, Y
->inner
-Hawthorne, X, Y
-Belmont, X, Y
-Interstate, X, Y
->suburbs
-Beaverton, X, Y
-Hillsboro, X, Y
->outlying
-Wilsonville, X, Y
-Sandy, X, Y
->unserved
-XYZ, X, Y
-XYZ, X, Y
+Pioneer Square,45.51885,-122.679337
+PSU Library,45.51158,-122.686257
+Union Station,45.52884,-122.676387
+Cinema 21,45.527427,-122.69432
+Bagdad Theater,45.511954,-122.625572
+Tri-Met,45.493748,-122.647483
+Convention Center,45.529148,-122.663137
+Cathedral Park,45.58754,-122.761981
+Giant Paul Bunyan,45.583637,-122.686542
+Mt. Tabor,45.512693,-122.593002
+Council Crest,45.498918,-122.70823
+Beaverton High School,45.486237,-122.810873
+Gresham Center for the Arts,45.499324,-122.42692
+Zoo,45.5097,-122.71629
+PDX,45.587647,-122.593173
+Pacific University,45.522405,-123.110905
+PCC Rock Creek,45.565686,-122.859249
+Lake Oswego,45.422401,-122.670765
+Oregon City,45.357754,-122.601843
+Wilsonville,45.29980542656,-122.77069645014
+Sandy,45.379879699824,-122.2655217278
