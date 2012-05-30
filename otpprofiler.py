@@ -17,16 +17,6 @@ walks = [500, 1000, 2000, 3000, 5000, 10000, 20000]
 #runid = time;
 #db.execute("insert % into runs");
 
-endpoints = {}
-for line in open('endpoints'):
-    fields = line.strip().split(',')
-    if len(fields) != 3:
-        print 'line does not have 3 fields'
-    else:
-        name, lat, lon = fields
-        endpoints[name] = (float(lat),float(lon))
-print endpoints
-
 URL = "http://localhost:8080/opentripplanner-api-webapp/ws/plan?submit&fromPlace=%f,%f&toPlace=%f,%f&min=%s&maxWalkDistance=%d&mode=%s&submit&time=%s&date=09/14/2011&arr=%s"
 
 total = 0
